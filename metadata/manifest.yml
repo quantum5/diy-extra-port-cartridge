@@ -48,6 +48,18 @@ Cart-Data:
   - Key: OPENSHIFT_DIY_EXTRA_PROXY_PORT3
     Type: environment
     Description: "External node port to reach non-web-framework port."
+  - Key: OPENSHIFT_DIY_EXTRA_PORT4
+    Type: environment
+    Description: "Internal port for something other than web-framework to bind to."
+  - Key: OPENSHIFT_DIY_EXTRA_PROXY_PORT4
+    Type: environment
+    Description: "External node port to reach non-web-framework port."
+  - Key: OPENSHIFT_DIY_EXTRA_PORT5
+    Type: environment
+    Description: "Internal port for something other than web-framework to bind to."
+  - Key: OPENSHIFT_DIY_EXTRA_PROXY_PORT5
+    Type: environment
+    Description: "External node port to reach non-web-framework port."
   - Key: OPENSHIFT_APP_DNS
     Type: environment
     Description: "Fully qualified domain name for the application."
@@ -110,4 +122,14 @@ Endpoints:
     Private-Port-Name: EXTRA_PORT3
     Private-Port:      15002
     Public-Port-Name:  EXTRA_PROXY_PORT3
+    Options:           { "ssl_to_gear": true }
+  - Private-IP-Name:   IP
+    Private-Port-Name: EXTRA_PORT4
+    Private-Port:      15003
+    Public-Port-Name:  EXTRA_PROXY_PORT4
+    Options:           { "ssl_to_gear": true }
+  - Private-IP-Name:   IP
+    Private-Port-Name: EXTRA_PORT5
+    Private-Port:      15004
+    Public-Port-Name:  EXTRA_PROXY_PORT5
     Options:           { "ssl_to_gear": true }
